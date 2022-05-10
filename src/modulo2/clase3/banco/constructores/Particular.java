@@ -1,4 +1,4 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,11 +12,33 @@ public class Particular {
 	private String nombre;
 	private String apellido;
 	private Direccion direccion;
-	private LocalDate fechaAlta;
-	
+	private LocalDate fechaAlta;	
 	private CajaAhorro cajaAhorro;
-	private CuentaCorriente cuentaCorriente;
+	private CuentaCorriente cuentaCorriente;	
 	
+	
+	public Particular(int numCliente, int dni, String nombre, String apellido, CajaAhorro cajaAhorro) {
+		super();
+		this.numCliente = numCliente;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.cajaAhorro = cajaAhorro;
+	}
+
+	public Particular(int numCliente, int dni, String nombre, String apellido, Direccion direccion, LocalDate fechaAlta,
+			CajaAhorro cajaAhorro, CuentaCorriente cuentaCorriente) {
+		super();
+		this.numCliente = numCliente;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+		this.fechaAlta = fechaAlta;
+		this.cajaAhorro = cajaAhorro;
+		this.cuentaCorriente = cuentaCorriente;
+	}
+
 	public int calcularAntiguedad() {
 		return Period.between(fechaAlta, LocalDate.now()).getYears();
 	}

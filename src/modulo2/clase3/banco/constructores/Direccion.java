@@ -1,11 +1,20 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 public class Direccion {
 
 	private String calle;
 	private int numero;
 	
+	public Direccion() {
+		super();
+	}	
 	
+	public Direccion(String calle, int numero) {
+		super();
+		this.calle = calle;
+		this.numero = numero;
+	}
+
 	public String getCalle() {
 		return calle;
 	}

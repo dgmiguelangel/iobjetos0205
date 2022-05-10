@@ -1,4 +1,4 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -16,37 +16,39 @@ public class Sucursal {
 	
 	private List<Administrativo> emplAdministrativos;
 	private List<Particular> cliParticulares;
-	private List<Empresa> cliEmpresas;
+	private List<Empresa> cliEmpresas;	
 	
 	
+	public Sucursal(int numSucursal, String razonSocial, LocalDate fechaConstitucion, Direccion direccion) {
+		super();
+		this.numSucursal = numSucursal;
+		this.razonSocial = razonSocial;
+		this.fechaConstitucion = fechaConstitucion;
+		this.direccion = direccion;
+	}
+
+
+	public Sucursal(int numSucursal, String razonSocial, LocalDate fechaConstitucion, Direccion direccion,
+			Director director) {
+		super();
+		this.numSucursal = numSucursal;
+		this.razonSocial = razonSocial;
+		this.fechaConstitucion = fechaConstitucion;
+		this.direccion = direccion;
+		this.director = director;
+	}
+
+
 	public List<Particular> infCliParticulares(){
 		List<Particular> lista = null;		
 		
-//		Particular cli1 = new Particular();
-//		cli1.setNumCliente(1);
-//		cli1.setDni(1);
-//		cli1.setNombre("Juan");
-//		cli1.setApellido("Garcia");
-//		
-//		CajaAhorro ca1 = new CajaAhorro();
-//		ca1.setNumCuenta(1);
-//		ca1.setSaldo(156000);
-//				
-//		cli1.setCajaAhorro(ca1);
-//		
-//		Particular cli2 = new Particular();
-//		cli2.setNumCliente(2);
-//		cli2.setDni(2);
-//		cli2.setNombre("Maria");
-//		cli2.setApellido("Gonzalez");
-//		
-//		CajaAhorro ca2 = new CajaAhorro();
-//		ca2.setNumCuenta(2);
-//		ca2.setSaldo(300000);
-//		
-//		cli2.setCajaAhorro(ca2);
-//		
-//		lista = Arrays.asList(cli1, cli2);		
+		CajaAhorro ca1 = new CajaAhorro(1, 156000);				
+		Particular cli1 = new Particular(1, 1, "Juan", "Garcia", ca1);	
+		
+		CajaAhorro ca2 = new CajaAhorro(2, 300000);
+		Particular cli2 = new Particular(2, 2, "Maria", "Gonzalez", ca2);
+		
+		lista = Arrays.asList(cli1, cli2);		
 		
 		return lista;
 	}

@@ -1,4 +1,4 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 import java.time.LocalDate;
 
@@ -6,16 +6,7 @@ class App {
 
 	public static void main(String[] args) {
 
-		Sucursal suc = new Sucursal();
-		suc.setNumSucursal(1);
-		suc.setRazonSocial("Banco IT");
-		suc.setFechaConstitucion(LocalDate.of(2005, 12, 1));
-
-		Direccion dir = new Direccion();
-		dir.setCalle("oliden");
-		dir.setNumero(2563);
-
-		suc.setDireccion(dir);
+		Sucursal suc = new Sucursal(1, "Banco IT", LocalDate.of(2005, 12, 1), new Direccion("oliden", 2563));
 
 		System.out.println("NroSucursal: " + suc.getNumSucursal() + ", Nombre: " + suc.getRazonSocial()
 				+ ", Direccion: " + suc.getDireccion().getCalle() + " " + suc.getDireccion().getNumero());

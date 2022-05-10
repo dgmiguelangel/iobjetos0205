@@ -1,10 +1,10 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Director {
-	
+public class Administrativo {
+
 	private int dni;
 	private int legajo;
 	private String nombre;
@@ -13,8 +13,23 @@ public class Director {
 	private LocalDate fechaNacimiento;
 	private LocalDate fechaIngreso;
 	private double sueldo;
-	private double bono;
+	private Area area;	
 	
+	
+	public Administrativo(int dni, int legajo, String nombre, String apellido, Direccion direccion,
+			LocalDate fechaNacimiento, LocalDate fechaIngreso, double sueldo, Area area) {
+		super();
+		this.dni = dni;
+		this.legajo = legajo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+		this.fechaNacimiento = fechaNacimiento;
+		this.fechaIngreso = fechaIngreso;
+		this.sueldo = sueldo;
+		this.area = area;
+	}
+
 	public int calcularEdad() {
 		return Period.between(fechaNacimiento, LocalDate.now()).getYears();
 	}
@@ -23,6 +38,8 @@ public class Director {
 		return Period.between(fechaIngreso, LocalDate.now()).getYears();
 	}
 
+	
+	
 	public int getDni() {
 		return dni;
 	}
@@ -87,14 +104,13 @@ public class Director {
 		this.sueldo = sueldo;
 	}
 
-	public double getBono() {
-		return bono;
+	public Area getArea() {
+		return area;
 	}
 
-	public void setBono(double bono) {
-		this.bono = bono;
+	public void setArea(Area area) {
+		this.area = area;
 	}
 	
 	
-
 }

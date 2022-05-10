@@ -1,4 +1,4 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 public class CuentaCorriente {
 	

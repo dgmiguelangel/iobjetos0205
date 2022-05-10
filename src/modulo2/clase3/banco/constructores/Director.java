@@ -1,4 +1,4 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -13,8 +13,23 @@ public class Director {
 	private LocalDate fechaNacimiento;
 	private LocalDate fechaIngreso;
 	private double sueldo;
-	private double bono;
+	private double bono;	
 	
+	
+	public Director(int dni, int legajo, String nombre, String apellido, Direccion direccion, LocalDate fechaNacimiento,
+			LocalDate fechaIngreso, double sueldo, double bono) {
+		super();
+		this.dni = dni;
+		this.legajo = legajo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+		this.fechaNacimiento = fechaNacimiento;
+		this.fechaIngreso = fechaIngreso;
+		this.sueldo = sueldo;
+		this.bono = bono;
+	}
+
 	public int calcularEdad() {
 		return Period.between(fechaNacimiento, LocalDate.now()).getYears();
 	}

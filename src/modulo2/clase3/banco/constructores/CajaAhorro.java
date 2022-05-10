@@ -1,13 +1,20 @@
-package modulo2.clase2.banco.visibilidad;
+package modulo2.clase3.banco.constructores;
 
-public class CuentaCorriente {
+public class CajaAhorro {
 	
 	private int numCuenta;
 	private int cbu;
 	private double saldo;
-	private String moneda;
-	private double descubierto;
+	private String moneda;	
 	
+	public CajaAhorro(int numCuenta, int cbu, double saldo, String moneda) {
+		super();
+		this.numCuenta = numCuenta;
+		this.cbu = cbu;
+		this.saldo = saldo;
+		this.moneda = moneda;
+	}
+
 	public void depositar(double importe) {
 		saldo += importe;
 	}
@@ -46,14 +53,6 @@ public class CuentaCorriente {
 
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
-	}
-
-	public double getDescubierto() {
-		return descubierto;
-	}
-
-	public void setDescubierto(double descubierto) {
-		this.descubierto = descubierto;
 	}
 	
 	
